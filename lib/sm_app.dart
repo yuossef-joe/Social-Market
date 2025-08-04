@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socialmarket/core/theming/colors.dart';
 import 'package:socialmarket/features/login/ui/widgets/not_found_page.dart';
 import 'package:socialmarket/routing/app_router.dart';
+import 'package:socialmarket/routing/routes.dart';
 
 class SmApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -11,18 +12,20 @@ class SmApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Social Market',
-        theme: ThemeData(
-          primaryColor: ColorsManager.primaryColor,
-        ),
-        onUnknownRoute: (settings) => MaterialPageRoute(
-          builder: (context) => const NotFoundPage(),
-        ),
-    ));
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Social Market',
+          theme: ThemeData(
+            primaryColor: ColorsManager.primaryColor,
+          ),
+          initialRoute: Routes.onboardingscreen,
+          onGenerateRoute: appRouter.generateRoute,
+          onUnknownRoute: (settings) => MaterialPageRoute(
+            builder: (context) => const NotFoundPage(),
+          ),
+        ));
   }
 }

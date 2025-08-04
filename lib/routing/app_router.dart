@@ -7,7 +7,7 @@ import 'package:socialmarket/routing/routes.dart';
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.onboarding:
+      case Routes.onboardingscreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => LoginScreen());
