@@ -15,4 +15,10 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     color: ColorsManager.primaryColor,
   );
+
+  static TextStyle font16wWithsemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.whiteText,
+  );
 }
